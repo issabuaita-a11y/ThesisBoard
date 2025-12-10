@@ -1,0 +1,44 @@
+{
+  "name": "thesisboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "dev:pm2": "pm2 start ecosystem.config.js",
+    "dev:pm2:stop": "pm2 stop thesis-wall",
+    "dev:pm2:restart": "pm2 restart thesis-wall",
+    "dev:pm2:logs": "pm2 logs thesis-wall",
+    "dev:pm2:delete": "pm2 delete thesis-wall",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^24.10.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "firebase": "^12.6.0",
+    "next": "^16.0.8",
+    "openai": "^6.10.0",
+    "postcss": "^8.5.6",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.6",
+    "firebase-tools": "^14.27.0",
+    "pm2": "^6.0.14",
+    "qrcode": "^1.5.4"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
