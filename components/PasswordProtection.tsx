@@ -23,13 +23,7 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
     e.preventDefault();
     setError('');
 
-    // Use Firebase Function for GitHub Pages (static hosting can't run API routes)
-    const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
-    const functionUrl = projectId
-      ? `https://us-central1-${projectId}.cloudfunctions.net/authBoard`
-      : '/api/auth/board'; // Fallback for local dev
-
-    const response = await fetch(functionUrl, {
+    const response = await fetch('/api/auth/board', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

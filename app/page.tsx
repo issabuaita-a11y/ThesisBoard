@@ -7,13 +7,7 @@ export default function Home() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (text: string) => {
-    // Use Firebase Function for GitHub Pages (static hosting can't run API routes)
-    const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
-    const functionUrl = projectId
-      ? `https://us-central1-${projectId}.cloudfunctions.net/submit`
-      : '/api/submit'; // Fallback for local dev
-    
-    const response = await fetch(functionUrl, {
+    const response = await fetch('/api/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
